@@ -1,0 +1,316 @@
+@import "bootstrap-material-design/less/bootstrap-material-design.less";
+
+@brand-primary: @red;
+@brand-success: @green;
+@brand-danger:  @teal;
+@brand-warning: @deep-orange;
+@brand-info: @light-blue;
+
+@font: "Roboto";
+@background-color: @white;
+
+body
+{
+ font-family: @font;
+ background-color:white;
+
+}
+
+.header
+{
+  height:60px;
+  text-align:center;
+  margin-bottom:40px;
+
+}
+
+.header h4
+{
+  font-style: italic;
+}
+
+.footer
+{
+
+  font-style: bold;
+  text-align:center;
+
+}
+.navbar {
+    margin-bottom: 0;
+}
+.container-body
+{
+  margin-top:2vh;
+  margin-bottom:1vh;
+}
+
+hr
+{
+  border-top: 1px solid  rgba(244,67,54,0.2);
+  margin:0 0 1vh 0;
+}
+
+.login-form {
+  position: relative;
+  z-index: 1;
+  background: @background-color;
+
+  margin: 15px auto 20px 20px;
+  padding: 25px;
+
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+}
+.center
+{
+  text-align:center;
+  margin:auto;
+}
+
+.vertical-center {
+  min-height: 35%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 35vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+      .img-responsive {
+        display: block;
+        width: auto;
+        max-height: 300px;
+       margin-top:15px;
+        }
+}
+
+
+
+.form-group
+{
+    margin-top:0;
+    padding-top:0;
+}
+.bold
+{
+    font-weight: 700;
+    color: @brand-primary;
+    text-align:center;
+}
+.error-message
+{
+  margin-left:10px;
+  color:grey;
+}
+
+.multi-item-carousel {
+  .carousel-inner {
+    > .item {
+      transition: 500ms ease-in-out left;
+    }
+    .active {
+      &.left {
+        left: -33%;
+      }
+      &.right {
+        left: 33%;
+      }
+    }
+    .next {
+      left: 33%;
+    }
+    .prev {
+      left: -33%;
+    }
+    @media all and (transform-3d),
+    (-webkit-transform-3d) {
+      > .item {
+        // use your favourite prefixer here
+        transition: 500ms ease-in-out all;
+        backface-visibility: visible;
+        transform: none!important;
+      }
+    }
+  }
+  .carouse-control {
+    &.left,
+    &.right {
+      background-image: none;
+    }
+  }
+}
+
+.panel-heading {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
+
+
+.caption-addbook {
+  text-align: center;
+font-weight:700;
+}
+
+.newbook-icon {
+
+   height: 50px;
+margin-bottom:5px;
+}
+
+.google-logo {
+  height: 18px;
+  margin-top:10px;
+}
+.panel-title
+{
+  font-family:@font;
+
+  font-size:1em;
+}
+.top-tab
+{
+  text-align: center;
+  margin-bottom:10px;
+}
+.grey
+{
+  color:#FF8A80;
+}
+
+.booksearch
+{
+  padding:5px;
+  border: 1px dotted #CCC;
+
+  &:hover {
+   border: 1px dotted @brand-primary;
+   background: #FFE;
+    cursor:pointer;
+  }
+   h5
+  {
+    font-weight:700;
+    margin-bottom:5px;
+  }
+  h6
+  {
+    margin-top:0;
+  }
+}
+.booksearch-image
+{
+  height:100px;
+}
+
+.fa-green
+{
+  color:white;
+  cursor:pointer
+}
+.fa-red
+{
+    color:white;
+  cursor:pointer
+}
+
+.profile-img-container {
+    position: relative;
+    display: inline-block; /* added */
+    overflow: hidden; /* added */
+    padding:5px;
+  .icon-wrap {
+    display: block;
+    position: absolute; 
+    top: 0%;
+    opacity: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: inherit;
+}
+.img-responsive{
+  height:150px;
+}
+}
+
+
+
+
+ .profile-img-container:hover .icon-wrap {
+    opacity: 1; /* added */
+
+    z-index: 500;
+}
+/* added */
+ .profile-img-container:hover .icon-wrap span {
+   top: 85%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background:black;
+   opacity:0.4;
+    
+}
+ .profile-img-container i
+{
+  padding:3px;
+}
+/* added */
+
+
+
+.slider-container
+{
+  padding-left: 35px;
+  padding-right:35px;
+  background: white;
+}
+
+.slides {
+  position: relative;
+  .slick-prev, .slick-next, .slick-arrow {
+    color:@brand-info;
+  }
+  .slick-prev:before, .slick-next:before {
+     color:@brand-info;
+  }
+
+}
+.slick-slider
+{
+  margin-bottom: 0;
+}
+.snackbar
+{
+  left:-50%;
+  font-family:"Roboto", sans-serif;
+}
+
+.article {
+    
+    background-color: #fff;
+    -moz-box-shadow: 1px 2px 20px 1px #d3d3d3;
+    -webkit-box-shadow: 1px 2px 20px 1px #d3d3d3;
+    box-shadow: 1px 2px 20px 1px #d3d3d3;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.article-image {
+    width: 100%;
+}
+.article-header {
+    margin-top: 0px;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-align:center;
+}
+
+p.author {
+    margin: 0;
+    color: gray;
+    text-align:center;
+}
+
+ .profile-img-container:hover  .icon-gallery span {
+    top: 90%;
+}
