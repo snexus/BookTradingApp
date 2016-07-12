@@ -2,9 +2,8 @@
 var mongoose = require('mongoose');
 
 var MessageSchema = new mongoose.Schema({
-  to: String, 
-  from: String,
-  date: Date,
+  user: String, 
+  messages: [mongoose.Schema.Types.Mixed],
 });
 
 

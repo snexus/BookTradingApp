@@ -2,24 +2,38 @@ import React from "react";
 import Gallery from "./Gallery.jsx";
 // import ImageSliderItem from "./ImageSliderItem.jsx";
 import BookSearchStore from "../stores/BookSearchStore";
+import * as BookSearchActions from "../actions/BookSearchActions";
 import Loader from 'react-loader'
+import {Notification} from 'react-notification';
 
 var masonryOptions = {
     transitionDuration: 500
 };
-
+var socket=io();
 
 export default class BooksGridLayout extends React.Component {
 constructor(props) {
     super(props);
-
+    
+    socket.on("update", function(){
+      console.log("BookGrid: Update required by server")
+      BookSearchStore.getAllBooksFromServer();
+    });
+    
     this.onChange = this.onChange.bind(this)
-
-    this.state = {
-      allBooksSettings:{books:[],  glyph1:"trash", color1:"red", action1:this.action1},
-      filterString:"",
-
+        var userBooks = BookSearchStore.getAllBooks()
+    console.log("User books received = ", userBooks)
+    this.state={
+       allBooksSettings:{books:userBooks,  glyph1:"trash", color1:"red", action1:this.action1},
+        filterString:"",notification: false,
+      notificationMessage: "",
     };
+
+    // this.state = {
+    //   allBooksSettings:{books:[],  glyph1:"trash", color1:"red", action1:this.action1},
+    //   filterString:"",
+
+    // };
      BookSearchStore.getAllBooksFromServer();
   }
   
@@ -42,6 +56,21 @@ constructor(props) {
 
   }
   
+    showNotification(message) {
+    this.setState({
+      notification: true,
+      notificationMessage: message
+    });
+    var that = this;
+    setTimeout(function() {
+      that.setState({
+        notification: false,
+        notificationMessage: ""
+      });
+    }, 3000)
+  }
+  
+  
 filterSearch()
   {
             this.setState({
@@ -51,19 +80,19 @@ filterSearch()
   }
   
     
-action1(){
-        return;
+action1(bookId){
+        console.log("BooksGridLayout: action1, bookId = ", bookId);
+        BookSearchActions.requestBook(bookId);
+        this.showNotification("Performing request book action")
+        
     }
     
-
-  
     onChange() {
     console.log("All Books - on change received")
     var userBooks = BookSearchStore.getAllBooks()
     console.log("User books received = ", userBooks)
     this.setState({
        allBooksSettings:{books:userBooks,  glyph1:"trash", color1:"red", action1:this.action1},
-       
      
     });
  
@@ -73,6 +102,11 @@ action1(){
   render() {
       
     var books = this.state.allBooksSettings.books  
+        var snackbarStyle = {
+      left: '-50%',
+      fontFamily: "Roboto"
+    };
+
 
     if (books.length==0)
     {
@@ -99,7 +133,7 @@ action1(){
       if (typeof(books[i].authors) != "undefined") authors = books[i].authors;
     //   booksArray.push(<ImageSliderItem src={url} key={books[i]._id} this={this} id={books[i]._id} action1={action1} color1={color1} action2={action2} color2={color2} glyph1={glyph1} glyph2={glyph2} />);
     console.log("url=", url)
-        booksArray.push({src:url, title:title, authors:authors, key:books[i]._id})
+        booksArray.push({src:url, title:title, authors:authors, key:books[i]._id, requestedBy:books[i].requestedBy, owner:books[i].owner, action1:action1, this:this})
       }
       var filteredArray=booksArray;
       var filterString = this.state.filterString
@@ -114,6 +148,7 @@ action1(){
      console.log("BookGridLayout: booksArray = ", booksArray)
     return (
     <div>
+      <Notification isActive={this.state.notification} message={this.state.notificationMessage}  action={""} style={snackbarStyle} />
     <div class="row">
         <div class="col-xs-12">
         <form class="form-inline top-tab" role="form">

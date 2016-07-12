@@ -26,6 +26,16 @@ module.exports = {
       
     },
     
+    updatePassword: function(login, newPassword, callback)
+    {
+         UserModel.findOne({login:login}, function(err, user){
+            if (err) {return callback(err);}
+            user.password = newPassword;
+                user.save(function(err){
+                      return callback(err);
+              })
+         });
+    },
    processLogin: function(login, pass, callback) 
    {
    //  console.log("inside processLogin, login, pass = ", login, pass)

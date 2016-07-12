@@ -3109,7 +3109,7 @@ body {
 }
 hr {
   border-top: 1px solid rgba(244, 67, 54, 0.2);
-  margin: 0 0 1vh 0;
+  margin: 20px 0 1vh 0;
 }
 .login-form {
   position: relative;
@@ -3223,11 +3223,11 @@ hr {
   height: 100px;
 }
 .fa-green {
-  color: white;
+  color: #03a9f4;
   cursor: pointer;
 }
 .fa-red {
-  color: white;
+  color: #f44336;
   cursor: pointer;
 }
 .profile-img-container {
@@ -3263,8 +3263,9 @@ hr {
   position: absolute;
   left: 0;
   right: 0;
-  background: black;
-  opacity: 0.4;
+  background: white;
+  opacity: 0.8;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
 }
 .profile-img-container i {
   padding: 3px;
@@ -3318,4 +3319,20 @@ p.author {
 }
 .profile-img-container:hover .icon-gallery span {
   top: 90%;
+}
+.message {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+.message-from {
+  font-weight: 700;
+  font-style: italic;
+}
+.update-form {
+  margin-bottom: 0px;
+}
+.control-label-settings {
+  font-weight: 700;
+  color: #333;
+  font-size: 1em;
 }

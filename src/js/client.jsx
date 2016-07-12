@@ -6,9 +6,11 @@ import App from "./components/App.jsx";
 import  Login  from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx"
 import Dashboard from "./components/Dashboard.jsx"
+import Settings from "./components/Settings.jsx"
 import BooksGridLayout from "./components/BooksGridLayout.jsx"
 import * as auth from "./auth/clientAuth.js";
 
+var socket=io();
 
 auth.logout()
 
@@ -29,6 +31,7 @@ auth.logout()
                <Route path="signup" name="signup" component={Signup}></Route>
                <Route path="login" name="login" component={Login}></Route>
                <Route path="allBooks" name="allBook" component={BooksGridLayout}></Route>
+               <Route path="settings" name="settings" component={Settings}></Route>
                <Route path="dashboard" name="dashboard" component={Dashboard} onEnter={requireAuth}></Route>
             </Route>
         </Router>

@@ -6,6 +6,7 @@ var BookSchema = new mongoose.Schema({
   title: String,
   authors: String,
   thumbLink: String,
+  requestedBy: String,
 });
 
 

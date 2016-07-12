@@ -1,12 +1,13 @@
 import { EventEmitter } from "events";
 import dispatcher from "../dispatcher";
-
+import * as auth from "../auth/clientAuth.js";
 
 class  AuthStore extends EventEmitter {
 constructor() {
     super()
     this.loginError = ""
     this.user = ""
+    this.passwChangeStatus = "";
 }
 
 logout()
@@ -15,6 +16,25 @@ logout()
    this.emit("change");
 }
 
+updatePassword(pass) {
+     this.passwChangeStatus="";
+        var xhr = new XMLHttpRequest();
+        var token = auth.getToken();
+        var updatePass = 'passw=' + encodeURIComponent(pass)+'&token='+encodeURIComponent(token);
+        xhr.open('post', '/updatepassw');
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
+        xhr.responseType = 'json';
+        xhr.onload = function() {
+         if (xhr.status == 200) {
+             this.passwChangeStatus="Password was updated.";
+            
+          } else {
+            this.passwChangeStatus="Password update has failed.";
+          }
+           this.emit("change");
+       }.bind(this);
+      xhr.send(updatePass);
+}
 
 
 setErrorMsg(msg) {
@@ -29,6 +49,10 @@ setUserName(userName) {
        this.emit("change");
     }
     
+getPassChangeMsg()
+{
+    return this.passwChangeStatus;
+}
 getCurrentUser() {
         return this.user;
     }
@@ -68,6 +92,12 @@ getLoginError()
     case "LOGOUT":
         this.logout();
         break;
+    
+    case "UPDATEPASSWORD":
+        this.updatePassword(action.password);
+        break;
+    
+    
 
     default:
       return true;

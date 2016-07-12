@@ -30,7 +30,7 @@ export default class ImageSliderItem extends React.Component {
             <img src={url} class="img-responsive"></img>
               <div class="icon-wrap"><span><i  class={class1} onClick = {this.props.action1.bind(this.props.this, this.props.id)}></i>
               {class2 && (
-                              <i  class={class2}></i>
+                              <i  class={class2} onClick = {this.props.action2.bind(this.props.this, this.props.id)}></i>
                               )}
               </span></div>
             </div>

@@ -7,6 +7,12 @@ import dispatcher from "../dispatcher";
            user: user,
         });
     }
+        export function updatePassword(password){
+        dispatcher.dispatch({
+           type:"UPDATEPASSWORD",
+           password: password,
+        });
+    }
     export function loginFailed(msg){
         dispatcher.dispatch({
            type:"LOGIN_FAILED",

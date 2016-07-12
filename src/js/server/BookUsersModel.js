@@ -3,8 +3,8 @@ var mongoose = require('mongoose');
 
 var BookUserSchema = new mongoose.Schema({
   user: String, 
-  requests: [mongoose.Schema.Types.ObjectId],
-  approvals: [mongoose.Schema.Types.ObjectId],
+  requests: [String],
+  approvals: [String],
 });
 
 

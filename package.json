@@ -41,11 +41,13 @@
     "react-slick": "^0.12.2",
     "react-tap-event-plugin": "^1.0.0",
     "sass-loader": "^3.2.1",
-    "socket.io": "~0.9.14",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^0.1.9",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-minifier": "^3.0.1",
     "webpack": "^1.13.1"
   }
 }
