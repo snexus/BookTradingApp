@@ -49,5 +49,9 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "html-minifier": "^3.0.1",
     "webpack": "^1.13.1"
-  }
+  },
+  "scripts": {
+  "build": "webpack --config ./webpack.config.prod.js --progress --colors",
+  "start": "node ./server.js"
+}
 }
