@@ -21,11 +21,14 @@
     "body-parser": "^1.15.2",
     "bootstrap-material-design": "^0.5.10",
     "classnames": "^2.2.5",
+    "clean-webpack-plugin": "^0.1.9",
     "express": "^4.14.0",
     "express-session": "^1.13.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "flexboxgrid": "^6.3.0",
     "flux": "^2.1.1",
     "google-books-search-2": "^0.3.0",
+    "html-minifier": "^3.0.1",
     "jsonwebtoken": "^7.0.1",
     "material-ui": "^0.15.0",
     "mongoose": "^4.5.1",
@@ -41,14 +44,12 @@
     "react-slick": "^0.12.2",
     "react-tap-event-plugin": "^1.0.0",
     "sass-loader": "^3.2.1",
+    "socket.io": "^1.4.8",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.1",
-    "clean-webpack-plugin": "^0.1.9",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "html-minifier": "^3.0.1"
+    "webpack": "^1.13.1"
   },
   "scripts": {
-  "postinstall":"webpack --config ./webpack.config.prod.js --progress --colors",
-  "start": "node ./server.js"
-}
+    "postinstall": "webpack --config ./webpack.config.prod.js --progress --colors",
+    "start": "node ./server.js"
+  }
 }
