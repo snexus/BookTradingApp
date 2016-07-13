@@ -1,22 +1,16 @@
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+## General information
 
+Book trading application is a platform to explore, manage, catalogue and borrow books.  Advanced dashboard allows user to add books via google books search engine, delete books from the collection, to allow/decline/delete book requests from other users and to receive real-time messages from application.
 
-Welcome to your Node.js project on Cloud9 IDE!
+##
 
-This chat example showcases how to use `socket.io` with a static `express` server.
+Technology stack used:
+- Customized bootstrap material design library
+- React.js/Flux as front-end
+- Node.js/Express.js/MongoDB as back-end
+- Socket.io for real time messaging
 
 ## Running the server
 
-1) Open `server.js` and start the app by clicking on the "Run" button in the top menu.
-
-2) Alternatively you can launch the app from the Terminal:
-
-    $ node server.js
-
-Once the server is running, open the project in the shape of 'https://projectname-username.c9.io/'. As you enter your name, watch the Users list (on the left) update. Once you press Enter or Send, the message is shared with all connected clients.
+$ node server.js
