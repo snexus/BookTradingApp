@@ -13,6 +13,8 @@ For exploring real-time capabilities, open in two browsers with different creden
 - Customized bootstrap material design library
 - Authentication - json web tocken, bcrypt hashed password storing for maximum security
 - React.js/Flux as front-end
+- Responsive design with Bbootstrap/HTML5/CSS3
+- LESS for CSS preprocessing
 - Node.js/Express.js/MongoDB as back-end
 - Socket.io for real time messaging
 
