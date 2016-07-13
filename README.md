@@ -1,9 +1,10 @@
 
 ## General information
 
-Book trading application is a platform to explore, manage, catalogue and borrow books.  Advanced dashboard allows user to add books via google books search engine, delete books from the collection, to allow/decline/delete book requests from other users and to receive real-time messages from application.
+Book trading application is a platform to explore, manage, catalogue and borrow books.  Advanced dashboard with on-hover context menus allows user to add books via google books search engine, delete books from the collection, to allow/decline/delete book requests from other users and to receive real-time messages from application. "All books" page shows a total book pool with filtering capabilites and on-hover context menu.
 
 Application url - https://book-trade-app.herokuapp.com
+
 Demo accounts: test/test, test2/test2
 For exploring real-time capabilities, open in two browsers with different credentials.
 
