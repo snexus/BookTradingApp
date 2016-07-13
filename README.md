@@ -1,4 +1,13 @@
 
+______             _      _____             _                       
+| ___ \           | |    |_   _|           | |                      
+| |_/ / ___   ___ | | __   | |_ __ __ _  __| | ___  _ __ ___   __ _ 
+| ___ \/ _ \ / _ \| |/ /   | | '__/ _` |/ _` |/ _ \| '_ ` _ \ / _` |
+| |_/ / (_) | (_) |   <    | | | | (_| | (_| | (_) | | | | | | (_| |
+\____/ \___/ \___/|_|\_\   \_/_|  \__,_|\__,_|\___/|_| |_| |_|\__, |
+                                                               __/ |
+                                                              |___/ 
+
 ## General information
 
 Book trading application is a platform to explore, manage, catalogue and borrow books.  Advanced dashboard with on-hover context menus allows user to add books via google books search engine, delete books from the collection, to allow/decline/delete book requests from other users and to receive real-time messages from application. "All books" page shows a total book pool with filtering capabilites and on-hover context menu.
