@@ -52,7 +52,8 @@ module.exports = {
                 var newMessageUser = new MessageModel({user:username, messages: [{from:"App",message:"Welcome to book trading"}]});
                   newMessageUser.save(function(err){
                      if (err) {return callback(err) }
-                     var newUserInfo = new UserInfoModel({user:username, name:"",city:"",state:""}, function(err){
+                     var newUserInfo = new UserInfoModel({user:username, name:"",city:"",state:""});
+                     newUserInfo.save(function(err){
                           return callback(err,bookUser)});
                      })
                     

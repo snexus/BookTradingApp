@@ -20,15 +20,17 @@
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'); 
     xhr.responseType = 'json';
     xhr.onload = function() {
+      console.log("Server returned ", this.status);
       var error = true;
         if (this.status === 404) {
        return cb(error,"Network error has occured" );
        
     }
      if (this.status == 200)    error = false;
-     cb(error,this.response.message );
+     
+     return cb(error,this.response.message );
    };
-     console.log(user)
+    
   xhr.send(user);
   }
 

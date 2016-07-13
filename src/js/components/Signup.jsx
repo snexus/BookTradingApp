@@ -26,14 +26,15 @@ class Signup extends React.Component {
 
       
       auth.signupOnServer(email, pass, function(error, message){
+        console.log("inside signupOnServeCallback, err,msg = ", error, message);
         if (!error)
-        {
+        { console.log("inside signupOnServeCallback");
               auth.login(email, pass, function(loggedIn) {
-                  // console.log("this after auth = ",this)
+                  console.log("this after auth = ",this)
                   if (!loggedIn) {
                     return this.setState({ error: "Couldn't login", message: message })
                   }
-            
+            console.log("this props = ", this.props)
 
                   AuthActions.loginSuccesfull(email)
                   var location = this.props
@@ -41,6 +42,7 @@ class Signup extends React.Component {
                     this.props.router.replace(location.state.nextPathname)
                   }
                   else {
+                  
                     this.props.router.replace('dashboard')
                   }
                 }.bind(this))
